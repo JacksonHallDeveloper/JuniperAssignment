@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="JuniperAssignment.Views.CheckOutView">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <ScrollView
+                RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                <StackLayout Margin="15,20,15,0" Spacing="0">
+                    <Label Text="Your cart from"
+                           TextColor="{StaticResource ColorText3}"
+                           FontSize="14" HorizontalOptions="Center" />
+
+                    <Label Text="{Binding Brand.brandName}"
+                           TextColor="{StaticResource ColorText}"
+                           FontAttributes="Bold" FontSize="16" HorizontalOptions="Center" />
+
+                    <Label Text="Items"
+                           TextColor="{StaticResource ColorText}"
+                           FontAttributes="Bold" FontSize="16" HorizontalOptions="Start"
+                           Margin="0,40,0,0" />
+
+                    <StackLayout x:Name="ItemsView" Margin="0,20,0,0"
+                                 BindableLayout.ItemsSource="{Binding ItemsInCart}" Spacing="5">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*, 2*">
+                                    <Image
+                                        Source="{Binding image}"
+                                        Aspect="AspectFit"
+                                        HeightRequest="100"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Start"
+                                        WidthRequest="100" />
+
+                                    <StackLayout Grid.Column="1" Spacing="0" HorizontalOptions="Start"
+                                                 VerticalOptions="CenterAndExpand">
+                                        <Label Text="{Binding name}" FontSize="12" LineBreakMode="WordWrap" />
+                                        <Label Text="{Binding price, StringFormat='{0:c}'}" FontSize="12" />
+                                        <Label Text="{Binding quantity, StringFormat='quantity: {0}'}" FontSize="12" />
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                    <Label Text="Total"
+                           TextColor="{StaticResource ColorText}"
+                           FontAttributes="Bold" FontSize="16" HorizontalOptions="Start"
+                           Margin="0,40,0,0" />
+
+                    <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*,*" Margin="0,20,0,0">
+                        <Label Text="Subtotal" Grid.Row="0" Grid.Column="0"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="Start" />
+
+                        <Label Text="{Binding Subtotal, StringFormat='{0:c}'}" Grid.Row="0" Grid.Column="1"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="End" />
+
+                        <Label Text="Shipping" Grid.Row="1" Grid.Column="0"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="Start" />
+
+                        <Label Text="{Binding Order.shipping, StringFormat='{0:c}'}" Grid.Row="1" Grid.Column="1"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="End" />
+
+                        <Label Text="Estimated taxes" Grid.Row="2" Grid.Column="0"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="Start" />
+
+                        <Label Text="{Binding OrderTaxes, StringFormat='{0:c}'}" Grid.Row="2" Grid.Column="1"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="End" />
+
+                        <Label Text="Tax rate" Grid.Row="3" Grid.Column="0"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="Start" />
+
+                        <Label Text="{Binding TaxRate, StringFormat='{0:p}'}" Grid.Row="3" Grid.Column="1"
+                               TextColor="{StaticResource ColorText3}" FontSize="14" HorizontalOptions="End" />
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+
+            <Frame
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-80}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.9}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=50}"
+                Padding="25,5"
+                Margin="0"
+                HasShadow="False"
+                BackgroundColor="{StaticResource ColorAccent1}"
+                effects:CornerRadiusEffect.CornerRadius="25"
+                effects:TouchEffect.AnimationDuration="150"
+                effects:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                effects:TouchEffect.PressedScale="0.95"
+                effects:TouchEffect.Command="{Binding ContinueToPaymentCommand}">
+                <Grid ColumnDefinitions="*,*">
+                    <Label Text="Continue" FontSize="18" TextColor="White" VerticalOptions="Center" />
+                    <Label
+                        Grid.Column="1"
+                        Text="{Binding Total, StringFormat='{0:c}'}"
+                        FontSize="18" TextColor="White" VerticalOptions="Center"
+                        HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

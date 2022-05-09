@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="JuniperAssignment.Views.SelectAddressView"
+             BackgroundColor="White"
+             x:Name="SelectAddressPage">
+    <ContentPage.Resources>
+        <Style x:Key="SelectAddressCollectionView" TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="White" />
+                                <Setter Property="Opacity" Value="1" />
+
+                                <Setter TargetName="_labelLocationDot" Property="Label.TextColor"
+                                        Value="{StaticResource ColorText}" />
+                                <Setter TargetName="_labelStreet1" Property="Label.TextColor"
+                                        Value="{StaticResource ColorText}" />
+                                <Setter TargetName="_labelAddressLine2" Property="Label.TextColor"
+                                        Value="{StaticResource ColorText3}" />
+                                <Setter TargetName="_labelEdit" Property="Label.TextColor"
+                                        Value="{StaticResource ColorText}" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="White" />
+                                <Setter Property="Opacity" Value="1" />
+
+                                <Setter TargetName="_labelLocationDot" Property="Label.TextColor"
+                                        Value="{StaticResource ColorAccent1}" />
+                                <Setter TargetName="_labelStreet1" Property="Label.TextColor"
+                                        Value="{StaticResource ColorAccent1}" />
+                                <Setter TargetName="_labelAddressLine2" Property="Label.TextColor"
+                                        Value="{StaticResource ColorAccent1}" />
+                                <Setter TargetName="_labelEdit" Property="Label.TextColor"
+                                        Value="{StaticResource ColorAccent1}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="Saved addresses" Margin="15,20, 0, 0" FontAttributes="Bold"
+                   TextColor="{StaticResource ColorText}" />
+            <CollectionView x:Name="AddressSelectionCollectionView"
+                            ItemsSource="{Binding Addresses}"
+                            BackgroundColor="White"
+                            Margin="10, 10"
+                            SelectedItem="{Binding SelectedAddress, Mode=TwoWay}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowSpacing="3"
+                              ColumnSpacing="3"
+                              Margin="0,5,0,15"
+                              Style="{StaticResource SelectAddressCollectionView}"
+                              effects:TouchEffect.AnimationDuration="150"
+                              effects:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                              effects:TouchEffect.PressedScale="0.95"
+                              effects:TouchEffect.Command="{Binding Path=BindingContext.AddressSelectedCommand, Source={x:Reference SelectAddressPage}}"
+                              effects:TouchEffect.CommandParameter="{Binding .}">
+
+                            <!--bug visual state manager doesnt override the gray background when pressed/selected https://github.com/xamarin/Xamarin.Forms/issues/7790-->
+                            <!--this appears to only happen when combined with TouchEffect/TapGestureRecognizer and CollectionView.SelectionMode single or multiple-->
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Label Text="location-dot"
+                                   x:Name="_labelLocationDot"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Grid.RowSpan="2"
+                                   FontSize="16"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontFamily="FAS" />
+
+                            <Label Text="{Binding Street1}"
+                                   x:Name="_labelStreet1"
+                                   Grid.Row="0"
+                                   Grid.Column="1" FontSize="14" HorizontalOptions="Start" VerticalOptions="End"
+                                   LineHeight=".8" />
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   x:Name="_labelAddressLine2"
+                                   FontSize="12"
+                                   LineHeight=".8"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding City}" />
+                                        <Span Text="{Binding State, StringFormat=', {0}'}" />
+                                        <Span Text="{Binding PostalCode, StringFormat=' {0},'}" />
+                                        <Span Text="{Binding Country, StringFormat=' {0}'}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Text="pen-to-square"
+                                   x:Name="_labelEdit"
+                                   Grid.Row="0"
+                                   Grid.Column="2"
+                                   Grid.RowSpan="2"
+                                   FontSize="16"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End"
+                                   FontFamily="FAS" />
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

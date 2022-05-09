@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="JuniperAssignment.Views.Controls.ProductsControlView"
+             x:Name="productsControl">
+    <ContentView.Content>
+        <CollectionView HeightRequest="180" ItemsLayout="HorizontalList" Grid.Row="1"
+                        ItemsSource="{Binding Products}"
+                        ItemSizingStrategy="MeasureAllItems"
+                        HorizontalScrollBarVisibility="Never"
+                        BindingContext="{x:Reference productsControl}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="*, Auto" Margin="10"
+                          effects:TouchEffect.AnimationDuration="150"
+                          effects:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                          effects:TouchEffect.PressedScale="0.95"
+                          effects:TouchEffect.CommandParameter="{Binding .}"
+                          effects:TouchEffect.Command="{Binding Path=TappedCommand, Source={x:Reference productsControl}}">
+                        <Image Grid.Row="0"
+                               Source="{Binding photo.url}"
+                               Aspect="AspectFit"
+                               HeightRequest="150"
+                               HorizontalOptions="Start"
+                               WidthRequest="150" />
+                        <Label Grid.Row="1" Text="{Binding itemName}" WidthRequest="120" LineBreakMode="WordWrap"
+                               FontSize="10" />
+                    </Grid>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentView.Content>
+</ContentView>

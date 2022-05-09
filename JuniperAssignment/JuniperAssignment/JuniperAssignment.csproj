@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>JuniperAssignment</RootNamespace>
+        <LangVersion>latest</LangVersion>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>pdbonly</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FreshMvvm" Version="4.0.1"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+        <PackageReference Include="PropertyChanged.Fody" Version="3.4.0"/>
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2"/>
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Models\Products.json"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Products.json"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Assets\Fonts\FontAwesome6BrandsRegular.otf"/>
+        <EmbeddedResource Include="Assets\Fonts\FontAwesome6Regular.otf"/>
+        <EmbeddedResource Include="Assets\Fonts\FontAwesome6Solid.otf"/>
+    </ItemGroup>
+</Project>

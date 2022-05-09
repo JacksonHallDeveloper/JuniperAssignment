@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="JuniperAssignment.Views.Controls.CartControlView"
+             x:Name="cartControlView">
+    <ContentView.Content>
+        <Frame BindingContext="{x:Reference cartControlView}"
+               Padding="15,5"
+               Margin="0"
+               HasShadow="False"
+               BackgroundColor="{StaticResource ColorAccent1}"
+               effects:CornerRadiusEffect.CornerRadius="25"
+               effects:TouchEffect.AnimationDuration="150"
+               effects:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+               effects:TouchEffect.PressedScale="0.95"
+               effects:TouchEffect.Command="{Binding TappedCommand}">
+            <Grid ColumnDefinitions="*,*">
+                <Label FontFamily="FAS" Text="cart-shopping" FontSize="20" TextColor="White" VerticalOptions="Center" />
+                <Label
+                    Grid.Column="1"
+                    Text="View Cart"
+                    TextColor="White"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    TextTransform="Uppercase"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    CharacterSpacing="1.1" />
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

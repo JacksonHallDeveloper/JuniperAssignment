@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:JuniperAssignment.Views.Controls;assembly=JuniperAssignment"
+             xmlns:effects="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="JuniperAssignment.Views.ProductDetailView"
+             x:Name="productDetails">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <ScrollView RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                        VerticalScrollBarVisibility="Never">
+                <StackLayout>
+                    <StackLayout Margin="15,25,15,0">
+                        <Label Text="{Binding ProductDetail.itemId}"
+                               TextColor="{StaticResource ColorText3}"
+                               FontAttributes="Bold" FontSize="14" />
+
+                        <Label Text="{Binding ProductDetail.itemName}"
+                               TextColor="{StaticResource ColorText2}"
+                               FontAttributes="Bold" FontSize="28" />
+
+                        <Label Text="{Binding Brand.brandName, StringFormat='by {0}'}"
+                               TextColor="{StaticResource ColorText3}"
+                               FontSize="14" />
+
+                        <Label Text="{Binding ProductDetail.price, StringFormat='{0:C}'}"
+                               TextColor="{StaticResource ColorText1}"
+                               FontAttributes="Bold" FontSize="28" />
+
+                        <Image
+                            Source="{Binding ProductDetail.photoLarge.url}"
+                            Aspect="AspectFit"
+                            HeightRequest="400"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            WidthRequest="400" />
+
+
+                        <Grid ColumnDefinitions="Auto, *" HeightRequest="50" IsVisible="{Binding ShowAddToCart}">
+                            <StackLayout Grid.Column="0" Spacing="10" Orientation="Horizontal"
+                                         HorizontalOptions="EndAndExpand" Margin="0,5,0,0">
+                                <Picker ItemsSource="{Binding QuantityOptions}"
+                                        SelectedItem="{Binding SelectedQuantity}"
+                                        VerticalOptions="Center" HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center" WidthRequest="45" />
+                                <Label Text="Quantity" VerticalOptions="Center" FontSize="14"
+                                       TextColor="{StaticResource ColorText3}" />
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Spacing="0" Orientation="Vertical"
+                                         HorizontalOptions="EndAndExpand"
+                                         VerticalOptions="Center"
+                                         effects:TouchEffect.AnimationDuration="150"
+                                         effects:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                                         effects:TouchEffect.PressedScale="0.95"
+                                         effects:TouchEffect.Command="{Binding AddToCardCommand}">
+                                <ImageButton HorizontalOptions="Center" HeightRequest="30">
+                                    <ImageButton.Source>
+                                        <FontImageSource FontFamily="FAS"
+                                                         Glyph="cart-plus"
+                                                         Color="{StaticResource ColorAccent1}" />
+                                    </ImageButton.Source>
+                                </ImageButton>
+
+                                <Label Text="add to cart" FontSize="14" TextColor="{StaticResource ColorAccent1}"
+                                       VerticalOptions="Center" />
+                            </StackLayout>
+                        </Grid>
+
+                        <Label Text="{Binding Brand.biography}" TextColor="{StaticResource ColorText3}"
+                               LineBreakMode="WordWrap"
+                               FontSize="12" Margin="0,20,0,0" />
+                    </StackLayout>
+
+                    <StackLayout BackgroundColor="{StaticResource ColorAccent3}" Margin="0,20,0,0" Padding="20,0">
+                        <Label TextColor="{StaticResource ColorText2}"
+                               Margin="0,20,0,20" HorizontalTextAlignment="Center" LineBreakMode="WordWrap">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="other products by " FontSize="20" />
+                                    <Span Text="{Binding Brand.brandName}" FontAttributes="Bold" FontSize="22" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <controls:ProductsControlView Products="{Binding RelatedProducts}"
+                                                      TappedCommand="{Binding ViewProductDetailCommand}"
+                                                      HeightRequest="180"
+                                                      WidthRequest="300"
+                                                      Margin="0,0,0,30" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <controls:CartControlView
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-150}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-80}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=120}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=50}"
+                TappedCommand="{Binding ViewCartCommand}"
+                IsVisible="{Binding ShowCart}" />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

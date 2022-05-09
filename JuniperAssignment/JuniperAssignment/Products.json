@@ -1,0 +1,293 @@
+[
+  {
+	"manufacturerId": 5623,
+	"brandName": "Furniture of America",
+	"photo": {
+	  "name": "5623",
+	  "url": "https://images.junipercdn.com/5623/junipermarket/profile/featureimage.jpg"
+	},
+	"totalProductCount": 5124,
+	"products": [
+	  {
+		"manufacturerId": 5623,
+		"itemId": "CM6587BG-SECT-R+OT",
+		"itemName": "Kaylee",
+		"price": 100.07,
+		"formattedPrice": "$0.00",
+		"photo": {
+		  "name": "CM6587BG-SECT-R+OT",
+		  "url": "https://images.junipercdn.com/5623/cm7365a-q-bed_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "CM6587BG-SECT-R+OT",
+		  "url": "https://images.junipercdn.com/5623/cm7365a-q-bed_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "formattedMsrpPrice": ""
+		},
+		"formattedMsrpPrice": "",
+		"isValidProduct": true
+	  },
+	  {
+		"manufacturerId": 5623,
+		"itemId": "CM6547-SECT",
+		"itemName": "Arlene",
+		"price": 57.8,
+		"formattedPrice": "$0.00",
+		"photo": {
+		  "name": "CM6547-SECT",
+		  "url": "https://images.junipercdn.com/5623/cm6547-sect_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "CM6547-SECT",
+		  "url": "https://images.junipercdn.com/5623/cm6547-sect_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "formattedMsrpPrice": ""
+		},
+		"formattedMsrpPrice": "",
+		"isValidProduct": true
+	  },
+	  {
+		"manufacturerId": 5623,
+		"itemId": "FOA4042WH-E-TABLE",
+		"itemName": "Nahara",
+		"price": 39.84,
+		"formattedPrice": "$0.00",
+		"photo": {
+		  "name": "FOA4042WH-E-TABLE",
+		  "url": "https://images.junipercdn.com/5623/foa4042wh-e-table_lg.jpg?height=200&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "FOA4042WH-E-TABLE",
+		  "url": "https://images.junipercdn.com/5623/foa4042wh-e-table_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "formattedMsrpPrice": ""
+		},
+		"formattedMsrpPrice": "",
+		"isValidProduct": true
+	  }
+	],
+	"shownByAgencies": [],
+	"userHasAccess": false,
+	"pendingAccess": false,
+	"isMultiline": false,
+	"isDirectSeller": true,
+	"accessRevoked": false,
+	"biography": "Come home and rest however you feel like with this massive U-shaped sectional sofa. Lounge on the right chaise, or put your feet up on the huge padded ottoman. You'll be comfy and cozy no matter where you sit. The plush cushioning on the fitted back pillows offers plenty of support, and the memory foam seat ensures you can binge watch to your heart's content. The inclusion of throw pillows makes it easy to decorate, just pick which side you think fits your home better and you're set. So get yourself something you know you'll use every day.",
+	"isValidBrand": true,
+	"orderMinimum": 0,
+	"formattedOrderMinimum": "$0.00"
+  },
+  {
+	"manufacturerId": 2331,
+	"brandName": "Dôme Deco US",
+	"photo": {
+	  "name": "2331",
+	  "url": "https://images.junipercdn.com/2331/junipermarket/profile/featureimage.jpg"
+	},
+	"totalProductCount": 268,
+	"products": [
+	  {
+		"manufacturerId": 2331,
+		"itemId": "V3-C5/BLA",
+		"itemName": "Vase Ceramics With Brown Top",
+		"price": 1.07,
+		"formattedPrice": "$0.00",
+		"msrpPrice": 690,
+		"photo": {
+		  "name": "V3C5BLA",
+		  "url": "https://images.junipercdn.com/2331/v3c5bla_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "V3C5BLA",
+		  "url": "https://images.junipercdn.com/2331/v3c5bla_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "msrpPrice": 690,
+		  "formattedMsrpPrice": "$690.00"
+		},
+		"formattedMsrpPrice": "$690.00",
+		"isValidProduct": true
+	  },
+	  {
+		"manufacturerId": 2331,
+		"itemId": "SIN4545M/MIX",
+		"itemName": "Cushion Singh, Design M, Filled",
+		"price": 20,
+		"formattedPrice": "$0.00",
+		"msrpPrice": 204,
+		"photo": {
+		  "name": "SIN4545MMIX",
+		  "url": "https://images.junipercdn.com/2331/sin4545mmix_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "SIN4545MMIX",
+		  "url": "https://images.junipercdn.com/2331/sin4545mmix_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "msrpPrice": 204,
+		  "formattedMsrpPrice": "$204.00"
+		},
+		"formattedMsrpPrice": "$204.00",
+		"isValidProduct": true
+	  },
+	  {
+		"manufacturerId": 2331,
+		"itemId": "T3-A20/BLA",
+		"itemName": "Hurricane Sprayed Smoked Glass, Wood&Patina",
+		"price": 1000,
+		"formattedPrice": "$0.00",
+		"msrpPrice": 306,
+		"photo": {
+		  "name": "T3A20BLA",
+		  "url": "https://images.junipercdn.com/2331/t3a20bla_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "T3A20BLA",
+		  "url": "https://images.junipercdn.com/2331/t3a20bla_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "msrpPrice": 306,
+		  "formattedMsrpPrice": "$306.00"
+		},
+		"formattedMsrpPrice": "$306.00",
+		"isValidProduct": true
+	  }
+	],
+	"shownByAgencies": [],
+	"userHasAccess": false,
+	"pendingAccess": false,
+	"isMultiline": false,
+	"isDirectSeller": true,
+	"accessRevoked": false,
+	"biography": "‘Cosmopolitan Living:’ two words that capture everything Dôme Deco stands for. We desire to gather inspiration from around the world, searching for beauty that goes far beyond average, in order to create interior collections with a cosmopolitan identity. Our design process translates into contemporary collections with a unique combination of colors and textures. We build warm, sophisticated interior atmospheres consisting of furniture, home accessories, lighting, and textiles.",
+	"isValidBrand": true,
+	"orderMinimum": 1000,
+	"formattedOrderMinimum": "$1,000.00"
+  },
+  {
+	"manufacturerId": 286,
+	"brandName": "Zuo Modern Contemporary, Inc",
+	"photo": {
+	  "name": "286",
+	  "url": "https://images.junipercdn.com/286/junipermarket/profile/featureimage.jpg"
+	},
+	"totalProductCount": 1061,
+	"products": [
+	  {
+		"manufacturerId": 286,
+		"itemId": "102103",
+		"itemName": "DELFIN DINING CHAIR ESPRESSO",
+		"price": 3.0,
+		"formattedPrice": "$0.00",
+		"msrpPrice": 495,
+		"photo": {
+		  "name": "102103",
+		  "url": "https://images.junipercdn.com/286/102103_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "102103",
+		  "url": "https://images.junipercdn.com/286/102103_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "msrpPrice": 495,
+		  "formattedMsrpPrice": "$495.00"
+		},
+		"formattedMsrpPrice": "$495.00",
+		"isValidProduct": true
+	  },
+	  {
+		"manufacturerId": 286,
+		"itemId": "188006",
+		"itemName": "WIRE/MESH CUSHION RED",
+		"price": 28.01,
+		"formattedPrice": "$0.00",
+		"msrpPrice": 60,
+		"photo": {
+		  "name": "188006",
+		  "url": "https://images.junipercdn.com/286/188006_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "188006",
+		  "url": "https://images.junipercdn.com/286/188006_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "msrpPrice": 60,
+		  "formattedMsrpPrice": "$60.00"
+		},
+		"formattedMsrpPrice": "$60.00",
+		"isValidProduct": true
+	  },
+	  {
+		"manufacturerId": 286,
+		"itemId": "205164",
+		"itemName": "ENTERPRISE LOW BACK OFFICE CHAIR BLACK",
+		"price": 4000.99,
+		"formattedPrice": "$0.00",
+		"msrpPrice": 630,
+		"photo": {
+		  "name": "205164",
+		  "url": "https://images.junipercdn.com/286/205164_lg.jpg?height=150&bg-color=fff&fit=bounds"
+		},
+		"photoLarge": {
+		  "name": "205164",
+		  "url": "https://images.junipercdn.com/286/205164_lg.jpg?height=400&bg-color=fff&fit=bounds"
+		},
+		"prices": {
+		  "customerPrice": 0,
+		  "formattedCustomerPrice": "$0.00",
+		  "defaultPrice": 0,
+		  "formattedDefaultPrice": "$0.00",
+		  "msrpPrice": 630,
+		  "formattedMsrpPrice": "$630.00"
+		},
+		"formattedMsrpPrice": "$630.00",
+		"isValidProduct": true
+	  }
+	],
+	"shownByAgencies": [],
+	"userHasAccess": false,
+	"pendingAccess": false,
+	"isMultiline": false,
+	"isDirectSeller": true,
+	"accessRevoked": false,
+	"biography": "Zuo makes fashionable furniture affordable to any demographic. More than ever, Zuo wants to offer our customers bold looks that fit any application; dining & bar, living or bed rooms. We offer furniture for homes to offices, restaurants or other commercial spaces, hotels or resorts or anything in between. ",
+	"isValidBrand": true,
+	"orderMinimum": 0,
+	"formattedOrderMinimum": "$0.00"
+  }
+]

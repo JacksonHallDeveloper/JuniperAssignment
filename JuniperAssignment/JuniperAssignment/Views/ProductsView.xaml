@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JuniperAssignment.Views.ProductsView"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:controls="clr-namespace:JuniperAssignment.Views.Controls;assembly=JuniperAssignment"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="White"
+             x:Name="Products">
+    <ContentPage.Content>
+        <ScrollView
+            VerticalScrollBarVisibility="Never">
+            <StackLayout Margin="15,0,0,0">
+                <Label HorizontalOptions="Center"
+                       xct:TouchEffect.AnimationDuration="150"
+                       xct:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                       xct:TouchEffect.PressedScale="0.95"
+                       xct:TouchEffect.Command="{Binding ChangeAddressCommand}"
+                       TextColor="{StaticResource ColorAccent1}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="location-dot "
+                                  FontFamily="FAS" />
+                            <Span Text="{Binding SelectedAddress.Street1}"
+                                  TextTransform="Uppercase" />
+                            <Span Text=" angle-down"
+                                  FontFamily="FAS" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Text="furniture" TextColor="{StaticResource ColorText}" FontAttributes="Bold" FontSize="26"
+                       Margin="0,20,0,0" />
+
+                <Label Text="shop whats important to you" TextColor="{StaticResource ColorText3}"
+                       FontAttributes="Bold"
+                       FontSize="12" />
+
+                <Grid ColumnDefinitions="Auto,Auto,*" RowDefinitions="*,Auto" Margin="0,25,0,0" ColumnSpacing="15"
+                      RowSpacing="5">
+                    <Label Text="brands" TextColor="{StaticResource ColorText}" FontAttributes="Bold" FontSize="14"
+                           VerticalOptions="Center" />
+
+                    <Ellipse Grid.Column="1"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Fill="{StaticResource ColorAccent3}"
+                             WidthRequest="30"
+                             HeightRequest="25" />
+                    <Label Text="{Binding Brands.Count}" Grid.Column="1" TextColor="{StaticResource ColorText2}"
+                           FontAttributes="Bold" FontSize="12" HorizontalOptions="Center" VerticalOptions="Center"
+                           Margin="0,0,0,0" />
+                    <Line Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Stroke="{StaticResource ColorAccent1}"
+                          X2="90"
+                          StrokeThickness="3" VerticalOptions="Start" Margin="0,0,0,0" />
+                </Grid>
+
+                <StackLayout x:Name="BrandsCollectionView" Margin="0,20,0,0"
+                             BindableLayout.ItemsSource="{Binding Brands}" Spacing="40">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="*, Auto">
+                                <Label
+                                    Text="{Binding brandName}"
+                                    TextColor="{StaticResource ColorText}" HeightRequest="30" FontSize="16" />
+                                <controls:ProductsControlView Grid.Row="1" Products="{Binding products}"
+                                                              TappedCommand="{Binding Path=BindingContext.ViewProductDetailCommand,
+                                                              Source={x:Reference Products}}"
+                                                              HeightRequest="180"
+                                                              WidthRequest="{Binding Path=Width, Source={x:Reference Products}}" />
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

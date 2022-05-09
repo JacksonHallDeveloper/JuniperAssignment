@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JuniperAssignment.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ColorAccent1">#0a544a</Color>
+            <Color x:Key="ColorAccent2">#87b7af</Color>
+            <Color x:Key="ColorAccent3">#f0f0f0</Color>
+            <Color x:Key="ColorAccent4">#EC5800</Color>
+
+            <Color x:Key="ColorText">
+                <x:Arguments>
+                    <x:Double>0.0</x:Double> <!-- R/255 -->
+                    <x:Double>0.0</x:Double> <!-- G/255 -->
+                    <x:Double>0.0</x:Double> <!-- B/255 -->
+                    <x:Double>.87</x:Double> <!-- A: 0.0-1.0 -->
+                </x:Arguments>
+            </Color>
+            <Color x:Key="ColorText3">#323d3b</Color>
+
+            <Color x:Key="ColorText2">#515151</Color>
+            <Color x:Key="ColorText1">#565656</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
